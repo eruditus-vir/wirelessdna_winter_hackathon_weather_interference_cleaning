@@ -42,8 +42,12 @@ forecast 2 hours with the last 6 images --> but we are going to correct these im
 
 ## Digitalization and Visualization Step 
 Input:
-radar.yaml 
-Output:???
+radar.yaml + images
+Output: PreprocessedImage
+
+TODO:
+- location localization 
+- function to confirm data deletion using other images at the same time
 
 
 ## Interference Detection Step 

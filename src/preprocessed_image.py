@@ -188,6 +188,10 @@ class PreprocessedImageCollection:
         for pi in self.preprocessed_images:
             pi.set_aemet_color_scheme(aemet_color_scheme)
 
+    def generate_initial_mask_to_all_images(self):
+        for pi in self.preprocessed_images:
+            pi.generate_initial_mask()
+
     def get_image(self, index: int):
         return self.preprocessed_images[index]
 

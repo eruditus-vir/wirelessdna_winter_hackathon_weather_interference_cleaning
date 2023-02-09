@@ -38,3 +38,12 @@ last half of may for testing is the best
 missing images is possible 
 
 forecast 2 hours with the last 6 images --> but we are going to correct these images 
+
+
+## Digitalization and Visualization Step 
+Input:
+radar.yaml 
+Output:???
+
+
+## Interference Detection Step 

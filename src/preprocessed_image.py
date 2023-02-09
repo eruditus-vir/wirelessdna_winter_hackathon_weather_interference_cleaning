@@ -28,6 +28,9 @@ class PreprocessedImage:
         self.reconstruction_mask = None  # final output
         self.aemet_color_scheme = None  # we can auto detect this
 
+    def get_base_file_name(self):
+        return os.path.basename(self.file_path)
+
     def set_aemet_color_scheme(self,
                                aemet_color_scheme: AemetColorScheme):
         self.aemet_color_scheme = aemet_color_scheme
@@ -43,6 +46,21 @@ class PreprocessedImage:
     def set_reconstruction_mask(self,
                                 reconstruction_mask):
         self.reconstruction_mask = reconstruction_mask
+
+    def load_image(self) -> Image:
+        return self._load_image()
+
+    def load_image_as_array(self) -> np.array:
+        img = self._load_image()
+        img = img.convert('RGB')
+        imgarray = np.array(img)
+        img.close()
+        return imgarray
+
+    def show(self):
+        img = self._load_image()
+        img.show()
+        img.close()
 
     def _load_image(self) -> Image:
         return Image.open(self.file_path)
@@ -65,7 +83,7 @@ class PreprocessedImage:
         img = img.convert("RGB")
         imgarray = np.array(img)
         mask = self._generate_circle_mask(img.height, img.width)
-        imgarray[~mask, :] = 0
+        imgarray[~mask, :] = 255
         img.close()
         return imgarray
 

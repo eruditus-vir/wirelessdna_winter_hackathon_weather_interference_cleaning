@@ -57,6 +57,7 @@ class PreprocessedImage:
         img.close()
         return imgarray
 
+
     def show(self):
         img = self._load_image()
         img.show()
@@ -83,7 +84,7 @@ class PreprocessedImage:
         img = img.convert("RGB")
         imgarray = np.array(img)
         mask = self._generate_circle_mask(img.height, img.width)
-        imgarray[~mask, :] = 255
+        imgarray[~mask, :] = 0
         img.close()
         return imgarray
 
@@ -99,7 +100,7 @@ class PreprocessedImage:
                 r, g, b = imgarray[x, y]
                 hex = rgb2hex(r, g, b)
                 if hex not in PreprocessedImage.mask_color_hexes:
-                    imgarray[x, y, :] = 255
+                    imgarray[x, y, :] = 0
         img.close()
         return imgarray
 

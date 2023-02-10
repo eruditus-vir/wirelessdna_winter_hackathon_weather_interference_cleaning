@@ -1,3 +1,4 @@
+# not used, no time to implement localization
 # import geopy
 # from src.preprocessed_image import PreprocessedImage
 # from src.radar import Radar

@@ -33,3 +33,7 @@ archive.zip
 model_weights/*
 
 data/*
+
+
+result_cloudy/*
+result_easy/*

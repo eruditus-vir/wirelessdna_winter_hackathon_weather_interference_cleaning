@@ -2,17 +2,10 @@
 
 data at https://filesender.funet.fi/?s=download&token=d05d4253-ef08-439e-968f-a10ef84877a4
 
-## Problem Statement 
-Reconstruction of radar to infer rain 
-Radar dataset 
-What is doppler radar? Radar for weather. Circulation of wind?
-radar shoot electro at specific elevation and bounce off and return to receiver.
-signal reflected get back and processed into reflectivity and velocity.
-Radar is at height, not reflection of things below or at the ground.
+Result: Won through using method from Vaisala
 
-Problem: ground vs radar 
-Problem: resolution, 1 km resolution, only show overall within 1 km box. 
-Problem: radar errors --> normal; refraction, superrefraction, subrefraction, ducting (mountains and obstructions)
+## Problem Statement 
+Delete, delete and reconstruct radar interferences.
 
 ## Objective  
 Digitalize radar values and locate the img pixels on real locations (lat/lng of pixels) --> because of radar errors 
@@ -22,7 +15,7 @@ Correct interferences
 Save data into a file in netCDF format. 
 
 ## Data and Assumptions 
-Real radar dataof 5 months
+Real radar data of 5 months
 saptial resolution of 1km per pixel 
 sampling rate of 10 minutes --> maybe interferences doesnt change between the images 
 
@@ -37,17 +30,14 @@ last half of may for testing is the best
 
 missing images is possible 
 
-forecast 2 hours with the last 6 images --> but we are going to correct these images 
-
-
 ## Digitalization and Visualization Step 
-Input:
-radar.yaml + images
-Output: PreprocessedImage
-
-TODO:
-- location localization 
-- function to confirm data deletion using other images at the same time
+Simple reading with pillow and cropping with pillow (including the radar circle). 
 
 
-## Interference Detection Step 
+## Interference Detection Step
+
+Methods Tried 
+- Line detections  
+- Deep Learning
+- Azimuth Radial Differential detection + Signal Professing (This worked very well )
+  - https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/383907

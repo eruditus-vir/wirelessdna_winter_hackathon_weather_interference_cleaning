@@ -37,7 +37,7 @@ Simple reading with pillow and cropping with pillow (including the radar circle)
 ## Interference Detection Step
 
 Methods Tried 
-- Line detections  
+- Traditional CV (Canny Edge Detection, Hough Line Transformation and Custom Rule based Approach)  
 - Deep Learning
 - Azimuth Radial Differential detection + Signal Professing (This worked very well )
   - https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/383907

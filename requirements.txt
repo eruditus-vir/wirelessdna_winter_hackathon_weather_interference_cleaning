@@ -1,3 +1,7 @@
 numpy
 pillow
 opencv-python
+geopy
+networkx
+diplib
+pygame
